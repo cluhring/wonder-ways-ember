@@ -1,0 +1,26 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url('images/mountain.jpg');
+  no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  font-weight: 300;
+}
+
+#logo {
+  padding: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #4ba294;
+}
+
+li {
+  list-style: none;
+}
