@@ -1,13 +1,13 @@
 <h3>{{name}}</h3>
-<p>{{city}}, {{state}}</p>
+<p class="trail-info">{{city}}, {{state}}</p>
 
-<ul>
+<ul class="activity">
   {{#each activities as |activity|}}
   <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
   {{/each}}
 </ul>
 
-<ul>
+<ul class="species">
   {{#each species as |species|}}
   <li><a href="{{species.clip_url}}">Bird Sounds</a>{{species.kingdom}}{{species.scientific_name}}</li>
  {{/each}}
