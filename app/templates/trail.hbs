@@ -1,0 +1,14 @@
+<h3>{{name}}</h3>
+<p>{{city}}, {{state}}</p>
+
+<ul>
+  {{#each activities as |activity|}}
+  <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each species as |species|}}
+  <li><a href="{{species.clip_url}}">Bird Sounds</a>{{species.kingdom}}{{species.scientific_name}}</li>
+ {{/each}}
+</ul>
