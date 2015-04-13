@@ -1,5 +1,7 @@
+{{input value=searchTerm placeholder="Search Trails"}}
+
 <ul>
-  {{#each model as |trail|}}
+  {{#each filteredTrails as |trail|}}
   <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
   {{/each}}
 </ul>
