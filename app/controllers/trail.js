@@ -6,8 +6,8 @@ export default Ember.Controller.extend({
     let allSpecies = this.get('model').species;
 
     function filterByHasClip(obj) {
-       return (obj.clip_url != "not available");
-    };
+       return (obj.clip_url !== "not available");
+    }
 
     var birds = allSpecies.filter(filterByHasClip);
 
@@ -18,8 +18,8 @@ export default Ember.Controller.extend({
     let allSpecies = this.get('model').species;
 
     function filterByKingdom(obj) {
-       return (obj.kingdom == "Plantae");
-    };
+       return (obj.kingdom === "Plantae");
+    }
 
     var plants = allSpecies.filter(filterByKingdom);
 
@@ -30,8 +30,8 @@ export default Ember.Controller.extend({
     let allSpecies = this.get('model').species;
 
     function filterByKingdom(obj) {
-       return (obj.kingdom == "Animalia");
-    };
+       return (obj.kingdom === "Animalia");
+    }
 
     var animals = allSpecies.filter(filterByKingdom);
 
