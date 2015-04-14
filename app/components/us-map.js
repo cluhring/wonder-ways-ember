@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 
     L.mapbox.accessToken = 'pk.eyJ1IjoiY2x1aHJpbmciLCJhIjoiNWF2Z1l6ZyJ9.8peAq7kTQyvXShlVv1K82w';
 
-    let map = L.mapbox.map(this.elementId, 'cluhring.d386248e');
+    let map = L.mapbox.map(this.elementId, 'cluhring.9d2c52ea');
     this.set('map', map);
 
     var statesData =  {"type":"FeatureCollection","features":[
