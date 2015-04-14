@@ -1,19 +1,28 @@
 <h3>{{model.name}}</h3>
 <p class="trail-info">{{model.city}}, {{model.state}}</p>
+<div class="container">
+  <div class="row">
 
-<div id="trail-map" class="map">
-  {{trail-map trail=model}}
+    <div class="col-md-6">
+      <div id="trail-map" class="map">
+        {{trail-map trail=model}}
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <p>This should be next to the map</p>
+      <ul class="activity">
+        {{#each activity in model.activities}}
+        <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
+        {{/each}}
+      </ul>
+
+      <ul class="species">
+        {{#each species in model.species}}
+        <li><img src="{{species.photo_url}}" height="50px"><a href="{{species.clip_url}}">Bird Sound</a> {{species.kingdom}} {{species.scientific_name}} {{species.common_name}}</li>
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
 </div>
-
-
-<ul class="activity">
-  {{#each activities as |activity|}}
-  <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
-  {{/each}}
-</ul>
-
-<ul class="species">
-  {{#each species as |species|}}
-  <li><a href="{{species.clip_url}}">Bird Sounds</a>{{species.kingdom}}{{species.scientific_name}}</li>
- {{/each}}
-</ul>
