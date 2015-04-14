@@ -6,10 +6,6 @@ var app = new EmberApp();
 app.import('bower_components/bootstrap/dist/js/bootstrap.js');
 app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 
-app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', {
-  destDir: 'assets'
-});
-
 app.import('bower_components/mapbox.js/mapbox.standalone.js');
 app.import('bower_components/mapbox.js/mapbox.standalone.css');
 // If you need to use different assets in different
