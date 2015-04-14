@@ -11,31 +11,31 @@
 
 
     <div class="col-md-6">
-      <button {{action 'showActivities' '.activities'}}>Activities</button>
-      <button {{action 'showBirds'}}>Birds</button>
-      <button {{action 'showAnimals'}}>Animals</button>
-      <button {{action 'showPlants'}}>Plants</button>
+      <button {{action 'filter' '.activites' }}>Activities</button>
+      <button {{action 'filter' '.birds' }}>Birds</button>
+      <button {{action 'filter' '.animals' }}>Animals</button>
+      <button {{action 'filter' '.plants' }}>Plants</button>
       <div class="all">
-        <ul class="activities" hidden=true>
+        <ul class="activities categoryType" hidden=true>
           {{#each activity in model.activities}}
           <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
           {{/each}}
         </ul>
 
-        <ul class="animals" hidden=true>
+        <ul class="animals categoryType" hidden=true>
           {{#each animals as |animal|}}
           <li><a href="{{animal.photo_url}}"><img src="{{animal.photo_url}}" class="img-rounded" alt="Cinque Terre" width="152" height="118"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
           {{/each}}
         </ul>
 
-        <ul class="plants" hidden=true>
+        <ul class="plants categoryType" hidden=true>
           {{#each plants as |plant| }}
           <li><a href="{{plant.photo_url}}"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
           {{/each}}
         </ul>
 
 
-        <ul class="birds" hidden=true>
+        <ul class="birds categoryType" hidden=true>
           {{#each birds as |bird|}}
             <li><a href="{{bird.clip_url}}">Bird Sound</a></li>
           {{/each}}
