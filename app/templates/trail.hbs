@@ -1,5 +1,13 @@
-<h3>{{model.name}}</h3>
-<p class="trail-info">{{model.city}}, {{model.state}}</p>
+<div class="row">
+  <div class="col-md-6 trail-header">
+    <h2>{{model.name}}</h2>
+    <p class="trail-info">{{model.city}}, {{model.state}}</p>
+  </div>
+  <div class="col-md-4 col-md-offset-1">
+      <h2> Trail Information </h2>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
 
@@ -10,7 +18,7 @@
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-6 category-icons">
       <button class="icon" {{action 'filter' '.activities' }}><img src="assets/images/run-icon.png"></button>
       <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/bird-icon.gif"></button>
       <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
@@ -34,7 +42,6 @@
           {{/each}}
         </ul>
 
-
         <ul class="birds categoryType" hidden=true>
           {{#each birds as |bird|}}
             <li><a href="{{bird.clip_url}}">Bird Sound</a></li>
@@ -42,6 +49,5 @@
         </ul>
       </div>
     </div>
-
   </div>
 </div>

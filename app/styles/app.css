@@ -122,6 +122,18 @@ a.search-btn:hover {
   margin: 7px;
 }
 
+.category-icons {
+  margin-bottom: 50px;
+}
+
 .all {
   margin-top: 20px;
+}
+
+#trail-map {
+  margin-bottom: 60px;
+}
+
+.trail-header {
+  margin-left: 17px;
 }
