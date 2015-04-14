@@ -2,6 +2,37 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  actions: {
+    showActivities: function(item) {
+      Ember.$(item).show();
+      Ember.$('.birds').hide();
+      Ember.$('.animals').hide();
+      Ember.$('.plants').hide();
+    },
+
+    showBirds: function() {
+      Ember.$('.activities').hide();
+      Ember.$('.birds').show();
+      Ember.$('.animals').hide();
+      Ember.$('.plants').hide();
+    },
+
+    showAnimals: function() {
+      Ember.$('.activities').hide();
+      Ember.$('.birds').hide();
+      Ember.$('.animals').show();
+      Ember.$('.plants').hide();
+    },
+
+    showPlants: function() {
+      Ember.$('.activities').hide();
+      Ember.$('.birds').hide();
+      Ember.$('.animals').hide();
+      Ember.$('.plants').show();
+    },
+
+  },
+
   birds: function () {
     let allSpecies = this.get('model').species;
 

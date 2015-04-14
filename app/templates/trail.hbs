@@ -9,35 +9,38 @@
       </div>
     </div>
 
+
     <div class="col-md-6">
-      <p>This should be next to the map</p>
-      <h3>Activities</h3>
-      <ul class="activity">
-        {{#each activity in model.activities}}
-        <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
-        {{/each}}
-      </ul>
+      <button {{action 'showActivities' '.activities'}}>Activities</button>
+      <button {{action 'showBirds'}}>Birds</button>
+      <button {{action 'showAnimals'}}>Animals</button>
+      <button {{action 'showPlants'}}>Plants</button>
+      <div class="all">
+        <ul class="activities" hidden=true>
+          {{#each activity in model.activities}}
+          <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
+          {{/each}}
+        </ul>
 
-      <h3>Animal</h3>
-      <ul class="animals">
-        {{#each animals as |animal|}}
-        <li><a href="{{animal.photo_url}}"><img src="{{animal.photo_url}}" height="80px"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
-        {{/each}}
-      </ul>
+        <ul class="animals" hidden=true>
+          {{#each animals as |animal|}}
+          <li><a href="{{animal.photo_url}}"><img src="{{animal.photo_url}}" height="80px"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
+          {{/each}}
+        </ul>
 
-      <h3>Plants</h3>
-      <ul class="plants">
-        {{#each plants as |plant| }}
-        <li><a href="{{plant.photo_url}}"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
-        {{/each}}
-      </ul>
+        <ul class="plants" hidden=true>
+          {{#each plants as |plant| }}
+          <li><a href="{{plant.photo_url}}"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
+          {{/each}}
+        </ul>
 
-      <h3>Bird Sounds</h3>
-      <ul class="bird">
-        {{#each birds as |bird|}}
-          <li><a href="{{bird.clip_url}}">Bird Sound</a></li>
-        {{/each}}
-      </ul>
+
+        <ul class="birds" hidden=true>
+          {{#each birds as |bird|}}
+            <li><a href="{{bird.clip_url}}">Bird Sound</a></li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
 
   </div>
