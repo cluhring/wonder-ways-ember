@@ -20,15 +20,15 @@
 
       <h3>Animal</h3>
       <ul class="animals">
-        {{#each species in model.species}}
-        <li><a href="{{species.photo_url}}"><img src="{{species.photo_url}}" height="80px"></a> {{species.kingdom}} {{species.scientific_name}} {{species.common_name}}</li>
+        {{#each animals as |animal|}}
+        <li><a href="{{animal.photo_url}}"><img src="{{animal.photo_url}}" height="80px"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
         {{/each}}
       </ul>
 
       <h3>Plants</h3>
       <ul class="plants">
-        {{#each species in model.species}}
-        <li><a href="{{species.photo_url}}"><img src="{{species.photo_url}}" height="80px"></a> {{species.kingdom}} {{species.scientific_name}} {{species.common_name}}</li>
+        {{#each plants as |plant| }}
+        <li><a href="{{plant.photo_url}}"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
         {{/each}}
       </ul>
 

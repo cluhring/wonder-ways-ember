@@ -12,5 +12,29 @@ export default Ember.Controller.extend({
     var birds = allSpecies.filter(filterByHasClip);
 
     return birds;
+  }.property('model'),
+
+  plants: function () {
+    let allSpecies = this.get('model').species;
+
+    function filterByKingdom(obj) {
+       return (obj.kingdom == "Plantae");
+    };
+
+    var plants = allSpecies.filter(filterByKingdom);
+
+    return plants;
+  }.property('model'),
+
+  animals: function () {
+    let allSpecies = this.get('model').species;
+
+    function filterByKingdom(obj) {
+       return (obj.kingdom == "Animalia");
+    };
+
+    var animals = allSpecies.filter(filterByKingdom);
+
+    return animals;
   }.property('model')
 });
