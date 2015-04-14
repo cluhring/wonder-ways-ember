@@ -11,10 +11,10 @@
 
 
     <div class="col-md-6">
-      <button {{action 'filter' '.activites' }}>Activities</button>
-      <button {{action 'filter' '.birds' }}>Birds</button>
-      <button {{action 'filter' '.animals' }}>Animals</button>
-      <button {{action 'filter' '.plants' }}>Plants</button>
+      <button class="icon" {{action 'filter' '.activites' }}><img src="assets/images/run-icon.png"></button>
+      <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/bird-icon.gif"></button>
+      <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
+      <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
       <div class="all">
         <ul class="activities categoryType" hidden=true>
           {{#each activity in model.activities}}
