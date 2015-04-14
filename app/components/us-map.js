@@ -84,7 +84,7 @@ export default Ember.Component.extend({
 
   function style(feature) {
     return {
-        fillColor: getColor(feature.properties.density),
+        fillColor: getColor(feature.properties.tot_trails),
         weight: 2,
         opacity: 1,
         color: 'white',
