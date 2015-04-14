@@ -11,15 +11,31 @@
 
     <div class="col-md-6">
       <p>This should be next to the map</p>
+      <h3>Activities</h3>
       <ul class="activity">
         {{#each activity in model.activities}}
         <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
         {{/each}}
       </ul>
 
-      <ul class="species">
+      <h3>Animal</h3>
+      <ul class="animals">
         {{#each species in model.species}}
-        <li><img src="{{species.photo_url}}" height="50px"><a href="{{species.clip_url}}">Bird Sound</a> {{species.kingdom}} {{species.scientific_name}} {{species.common_name}}</li>
+        <li><a href="{{species.photo_url}}"><img src="{{species.photo_url}}" height="80px"></a> {{species.kingdom}} {{species.scientific_name}} {{species.common_name}}</li>
+        {{/each}}
+      </ul>
+
+      <h3>Plants</h3>
+      <ul class="plants">
+        {{#each species in model.species}}
+        <li><a href="{{species.photo_url}}"><img src="{{species.photo_url}}" height="80px"></a> {{species.kingdom}} {{species.scientific_name}} {{species.common_name}}</li>
+        {{/each}}
+      </ul>
+
+      <h3>Bird Sounds</h3>
+      <ul class="bird">
+        {{#each birds as |bird|}}
+          <li><a href="{{bird.clip_url}}">Bird Sound</a></li>
         {{/each}}
       </ul>
     </div>
