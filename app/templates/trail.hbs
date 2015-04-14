@@ -1,19 +1,47 @@
 <h3>{{model.name}}</h3>
 <p class="trail-info">{{model.city}}, {{model.state}}</p>
+<div class="container">
+  <div class="row">
 
-<div id="trail-map" class="map">
-  {{trail-map trail=model}}
+    <div class="col-md-6">
+      <div id="trail-map" class="map">
+        {{trail-map trail=model}}
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <button {{action 'showActivities' '.activities'}}>Activities</button>
+      <button {{action 'showBirds'}}>Birds</button>
+      <button {{action 'showAnimals'}}>Animals</button>
+      <button {{action 'showPlants'}}>Plants</button>
+      <div class="all">
+        <ul class="activities" hidden=true>
+          {{#each activity in model.activities}}
+          <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
+          {{/each}}
+        </ul>
+
+        <ul class="animals" hidden=true>
+          {{#each animals as |animal|}}
+          <li><a href="{{animal.photo_url}}"><img src="{{animal.photo_url}}" height="80px"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
+          {{/each}}
+        </ul>
+
+        <ul class="plants" hidden=true>
+          {{#each plants as |plant| }}
+          <li><a href="{{plant.photo_url}}"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
+          {{/each}}
+        </ul>
+
+
+        <ul class="birds" hidden=true>
+          {{#each birds as |bird|}}
+            <li><a href="{{bird.clip_url}}">Bird Sound</a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>
-
-
-<ul class="activity">
-  {{#each activities as |activity|}}
-  <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
-  {{/each}}
-</ul>
-
-<ul class="species">
-  {{#each species as |species|}}
-  <li><a href="{{species.clip_url}}">Bird Sounds</a>{{species.kingdom}}{{species.scientific_name}}</li>
- {{/each}}
-</ul>

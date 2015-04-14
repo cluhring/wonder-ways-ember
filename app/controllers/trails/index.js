@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
         let keys = Object.keys(trail);
         let isMatching = false;
         keys.forEach((key) => {
-          if (trail[key] && trail[key].toString().includes(searchTerm)) isMatching = true;
+          if (trail[key] && trail[key].toString().includes(searchTerm)) { isMatching = true; }
         });
         return isMatching;
       });
