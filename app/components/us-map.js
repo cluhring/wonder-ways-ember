@@ -97,7 +97,7 @@ export default Ember.Component.extend({
 
   function highlightFeature(e) {
     var layer = e.target;
-
+    info.update(layer.feature.properties);
     layer.setStyle({
         weight: 2.5,
         color: '#b03060',
@@ -111,6 +111,7 @@ export default Ember.Component.extend({
   }
 
   function resetHighlight(e) {
+    info.update();
     geojson.resetStyle(e.target);
   }
 
@@ -132,6 +133,46 @@ export default Ember.Component.extend({
       style: style,
       onEachFeature: onEachFeature
   }).addTo(map);
+
+  var info = L.control();
+
+  info.onAdd = function (map) {
+      this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+      this.update();
+      return this._div;
+  };
+
+  // method that we will use to update the control based on feature properties passed
+  info.update = function (props) {
+      this._div.innerHTML = '<h4>US Trails</h4>' +  (props ?
+          '<b>' + props.name + '</b><br />' + props.tot_trails + ' trails'
+          : 'Hover over a state');
+  };
+
+  info.addTo(map);
+
+  var legend = L.control({position: 'bottomright'});
+
+  legend.onAdd = function (map) {
+
+      var div = L.DomUtil.create('div', 'info legend'),
+          grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+          labels = [];
+
+      // loop through our density intervals and generate a label with a colored square for each interval
+      for (var i = 0; i < grades.length; i++) {
+          div.innerHTML +=
+              '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+              grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+      }
+
+      return div;
+  };
+
+  legend.addTo(map);
+
+
+
 
   }
 });
