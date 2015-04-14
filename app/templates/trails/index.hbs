@@ -1,5 +1,12 @@
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+      {{input value=searchTerm placeholder="Search Trails" autocomplete="off"}}
+    </form>
+</div>
+
 <ul>
-  {{#each model as |trail|}}
+  {{#each filteredTrails as |trail|}}
   <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
   {{/each}}
 </ul>

@@ -3,12 +3,14 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
-
 app.import('bower_components/bootstrap/dist/js/bootstrap.js');
-// app.import('bower_components/bootstrap/dist/css/bootstrap.css');
-app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', {
-  destDir: 'assets'
-});
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+// app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', {
+//   destDir: 'assets'
+// });
+
+app.import('bower_components/mapbox.js/mapbox.standalone.js');
+app.import('bower_components/mapbox.js/mapbox.standalone.css');
 // If you need to use different assets in different
 // environments, specify an object as the first parameter. That
 // object's keys should be the environment name and the values

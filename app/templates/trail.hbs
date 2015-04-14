@@ -1,5 +1,10 @@
-<h3>{{name}}</h3>
-<p class="trail-info">{{city}}, {{state}}</p>
+<h3>{{model.name}}</h3>
+<p class="trail-info">{{model.city}}, {{model.state}}</p>
+
+<div id="trail-map" class="map">
+  {{trail-map trail=model}}
+</div>
+
 
 <ul class="activity">
   {{#each activities as |activity|}}
