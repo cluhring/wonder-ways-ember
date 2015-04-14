@@ -1,7 +1,9 @@
 <h2>Trails</h2>
 
 <div id="us-map" class="map">
-  {{us-map trail=model}}
+  <h3>Focused State: {{selectedState}}</h3>
+  {{us-map trails=model selectedState=selectedState}}
 </div>
+
 
 {{outlet}}

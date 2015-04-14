@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
 
   filteredTrails: function () {
     let searchTerm = this.get('searchTerm');
+
     let trails = this.get('model');
 
     if (searchTerm) {
@@ -20,6 +21,8 @@ export default Ember.Controller.extend({
     }
 
     return trails;
-  }.property('searchTerm', 'model')
+  }.property('searchTerm', 'model'),
+
+  selectedState: '',
 
 });

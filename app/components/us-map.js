@@ -121,17 +121,20 @@ export default Ember.Component.extend({
     map.fitBounds(e.target.getBounds());
   }
 
-  function onEachFeature(feature, layer) {
+  let onEachFeature = (feature, layer) => {
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        click: zoomToFeature
+        click: function (e) {
+          zoomToFeature(e);
+          this.set('selectedState', feature.properties.name)
+        }.bind(this)
     });
   }
 
   geojson = L.geoJson(statesData, {
       style: style,
-      onEachFeature: onEachFeature
+      onEachFeature: onEachFeature.bind(this)
   }).addTo(map);
 
   var info = L.control();
@@ -167,12 +170,42 @@ export default Ember.Component.extend({
       }
 
       return div;
-  };
+    };
+    legend.addTo(map);
 
-  legend.addTo(map);
+    trails.forEach((trail) => {
+      console.log(trail);
+
+      var myLayer = L.mapbox.featureLayer().addTo(map);
+
+      var geojsonFeatures = [
+        {
+        "type": "Feature",
+        "properties": {
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            trail.long,
+            trail.lat
+            ]
+        }
+        },
+        ];
+
+        myLayer.on('layeradd', function(e) {
+        var marker = e.layer,
+          feature = marker.feature;
+
+        var popupContent = feature.properties.name;
+        marker.bindPopup(popupContent);
+        });
+
+        myLayer.setGeoJSON(geojsonFeatures);
 
 
-
-
+    });
   }
+
+
 });
