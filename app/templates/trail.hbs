@@ -1,5 +1,13 @@
-<h3>{{model.name}}</h3>
-<p class="trail-info">{{model.city}}, {{model.state}}</p>
+<div class="row">
+  <div class="col-md-6 trail-header">
+    <h2>{{model.name}}</h2>
+    <p class="trail-info">{{model.city}}, {{model.state}}</p>
+  </div>
+  <div class="col-md-3">
+      <h2> Trail Information </h2>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
 
@@ -10,38 +18,36 @@
     </div>
 
 
-    <div class="col-md-6">
-      <button {{action 'showActivities' '.activities'}}>Activities</button>
-      <button {{action 'showBirds'}}>Birds</button>
-      <button {{action 'showAnimals'}}>Animals</button>
-      <button {{action 'showPlants'}}>Plants</button>
+    <div class="col-md-6 category-icons well">
+      <button class="icon" {{action 'filter' '.activities' }}><img src="assets/images/run-icon.png"></button>
+      <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/duck-icon.png"></button>
+      <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
+      <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
       <div class="all">
-        <ul class="activities" hidden=true>
+        <ul class="activities categoryType" hidden=true>
           {{#each activity in model.activities}}
-          <li><a href="{{activity.url}}">{{activity.activity_type_name}}</a></li>
+          <li><a href="{{activity.url}}" class="info-text">{{activity.activity_type_name}}</a></li>
           {{/each}}
         </ul>
 
-        <ul class="animals" hidden=true>
+        <ul class="animals categoryType" hidden=true>
           {{#each animals as |animal|}}
-          <li><a href="{{animal.photo_url}}"><img src="{{animal.photo_url}}" height="80px"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
+          <li><a href="{{animal.photo_url}}" class="info-text"><img src="{{animal.photo_url}}" class="img-rounded" alt="Cinque Terre" width="152" height="118"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
           {{/each}}
         </ul>
 
-        <ul class="plants" hidden=true>
+        <ul class="plants categoryType" hidden=true>
           {{#each plants as |plant| }}
-          <li><a href="{{plant.photo_url}}"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
+          <li><a href="{{plant.photo_url}}" class="info-text"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
           {{/each}}
         </ul>
 
-
-        <ul class="birds" hidden=true>
+        <ul class="birds categoryType" hidden=true>
           {{#each birds as |bird|}}
-            <li><a href="{{bird.clip_url}}">Bird Sound</a></li>
+            <li><a href="{{bird.clip_url}}" class="info-text">Bird Sound</a></li>
           {{/each}}
         </ul>
       </div>
     </div>
-
   </div>
 </div>

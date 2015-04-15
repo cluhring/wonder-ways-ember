@@ -7,6 +7,13 @@ body {
   font-weight: 300;
 }
 
+button.icon {
+  background-color: transparent;
+  color: none;
+  outline: none;
+  border:none;
+}
+
 #logo {
   padding: 40px;
 }
@@ -24,6 +31,12 @@ a:hover {
 
 li {
   list-style: none;
+
+}
+
+.info-text {
+  list-style: none;
+  font-size: 20px;
 }
 
 .trail-map {
@@ -109,4 +122,42 @@ a.search-btn:hover {
 .top-buttons {
   margin-top: 80px;
   margin-left: 160px;
+}
+
+.img-rounded {
+  margin: 7px;
+}
+
+.category-icons {
+  margin-bottom: 50px;
+}
+
+.all {
+  margin-top: 20px;
+}
+
+#trail-map {
+  margin-bottom: 60px;
+}
+
+.trail-header {
+  margin-left: 17px;
+}
+
+.well {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.icon {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom:20px;
+}
+
+button:hover {
+  background: rgba(91, 204, 208, 0.57);
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
 }
