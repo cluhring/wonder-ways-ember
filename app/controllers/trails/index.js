@@ -21,5 +21,4 @@ export default Ember.Controller.extend({
 
     return trails;
   }.property('searchTerm', 'model')
-
 });
