@@ -28,14 +28,14 @@ export default Ember.Controller.extend({
     filter: function(category) {
       Ember.$('.categoryType').hide();
       Ember.$(category).show();
-    }
+    },
   },
 
   birds: function () {
     let allSpecies = this.get('model').species;
 
     function filterByHasClip(obj) {
-       return (obj.clip_url !== "not available");
+       return (obj.clip_url !== "not available" && obj.clip_url !== "not found");
     }
 
     var birds = allSpecies.filter(filterByHasClip);
