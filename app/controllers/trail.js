@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  firstActivity: Ember.computed.alias('model.activities'),
+
   actions: {
     filter: function(category) {
       Ember.$('.categoryType').hide();

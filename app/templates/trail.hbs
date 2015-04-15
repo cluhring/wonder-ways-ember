@@ -25,6 +25,7 @@
       <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
       <div class="all">
         <ul class="activities categoryType" hidden=true>
+          <li>{{firstActivity.length}}</li>
           {{#each activity in model.activities}}
           <li><a href="{{activity.url}}" class="info-text">{{activity.activity_type_name}}</a></li>
           {{/each}}

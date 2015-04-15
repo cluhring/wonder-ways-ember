@@ -21,41 +21,14 @@ export default Ember.Component.extend({
     map.setView([lat, lng], 15);
 
     var points = { "type": "FeatureCollection",
-        "features": [
-          { "type": "Feature",
-            "geometry": {"type": "Point", "coordinates": [lng, lat]},
-            "properties": {"marker-symbol": "park", "marker-color": "#0C5CFE", "marker-size": "large"}
-            }
-           ]
-         }
+    "features": [
+      { "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [lng, lat]},
+      "properties": {"marker-symbol": "park", "marker-color": "#0C5CFE", "marker-size": "large"}
+    }
+  ]
+}
 
-    var myLayer = L.mapbox.featureLayer(points).addTo(map);
-    //
-    // var geojson =
-    //   {type: "FeatureCollection",
-    //   features: [
-    //     {type: "Feature", geometry: { type:"point", coordinates: [lat, lng]},
-    //     properties: {marker-symbol: "music", marker-color: "#e9620a", marker-size: "large"}
-    //   }
-    // ]
-    // }
-
-//     var points = { "type": "FeatureCollection",
-//         "features": [
-//           { "type": "Feature",
-//             "geometry": {"type": "Point", "coordinates": [lat, lng]},
-//             "properties": {"marker-size": "large"}
-//             }
-//            ]
-//          }
-// myLayer.setGeoJSON(points)
-
-// myLayer.on('layeradd', function(e) {
-//   var marker = e.layer,
-//   feature = marker.feature;
-// });
-//
-// myLayer.setGeoJSON(geojson);
-
+var myLayer = L.mapbox.featureLayer(points).addTo(map);
 }
 });
