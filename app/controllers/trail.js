@@ -4,16 +4,21 @@ export default Ember.Controller.extend({
 
   trailActivities: Ember.computed.alias('model.activities'),
 
-  selectedBird: null,
+  isExpanded: false,
 
   actions: {
+    expand: function() {
+      this.set('isExpanded', true);
+    },
+
+    close: function() {
+      this.set('isExpanded', false);
+    },
+
     filter: function(category) {
       Ember.$('.categoryType').hide();
       Ember.$(category).show();
     },
-    selectBird: function (bird) {
-      this.set('selectedBird', bird);
-    }
   },
 
   birds: function () {

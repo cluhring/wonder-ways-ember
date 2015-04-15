@@ -14,9 +14,9 @@ export default Ember.Component.extend({
     let map = L.mapbox.map(this.elementId, 'lydias303.4be232dc');
     this.set('map', map);
 
-    let lat = this.get('trail.lat')
+    let lat = this.get('trail.lat');
 
-    let lng = this.get('trail.lng')
+    let lng = this.get('trail.lng');
 
     map.setView([lat, lng], 15);
 
@@ -25,9 +25,8 @@ export default Ember.Component.extend({
       { "type": "Feature",
       "geometry": {"type": "Point", "coordinates": [lng, lat]},
       "properties": {"marker-symbol": "park", "marker-color": "#0C5CFE", "marker-size": "large"}
-    }
-  ]
-}
+       }]
+    };
 
 var myLayer = L.mapbox.featureLayer(points).addTo(map);
 }
