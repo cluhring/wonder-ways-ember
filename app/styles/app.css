@@ -166,3 +166,8 @@ button.icon:hover {
 .big-well {
   width: 100%;
 }
+
+img.back-button {
+  margin-top: 100px;
+  margin-right: 100px;
+}
