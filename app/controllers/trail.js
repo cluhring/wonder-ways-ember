@@ -4,15 +4,25 @@ export default Ember.Controller.extend({
 
   trailActivities: Ember.computed.alias('model.activities'),
 
-  isExpanded: false,
+  isDesc: false,
+  isDirections: false,
+
 
   actions: {
-    expand: function() {
-      this.set('isExpanded', true);
+    expandDirections: function() {
+      this.set('isDirections', true);
     },
 
-    close: function() {
-      this.set('isExpanded', false);
+    closeDirections: function() {
+      this.set('isDirections', false);
+    },
+
+    expandDesc: function() {
+      this.set('isDesc', true);
+    },
+
+    closeDesc: function() {
+      this.set('isDesc', false);
     },
 
     filter: function(category) {

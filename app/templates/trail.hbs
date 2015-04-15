@@ -7,33 +7,36 @@
   </div>
 </div>
 <div class="container well big-well">
-<div class="row trail-top">
-  <div class="col-md-6 trail-header">
-    <h2>{{model.name}}</h2>
-    <p class="trail-info">{{model.city}}, {{model.state}}</p>
-    <p class="trail-info">{{model.description}}</p>
-    {{#if isExpanded}}
-    <h3>Directions<span> <button  {{action 'close'}} class="btn-directions">X</button></span></h3>
-    <p class="trail-info">{{model.directions}}</p>
-    {{else}}
-    <button {{action 'expand'}} class="btn-directions" >Directions</button>
-    {{/if}}
-  </div>
-  <div class="col-md-3">
-      <h2> Trail Information </h2>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-
-    <div class="col-md-6">
-      <div id="trail-map" class="map">
-        {{trail-map trail=model}}
-      </div>
+  <div class="row trail-top">
+    <div class="col-md-6 trail-header">
+      <h2>{{model.name}}</h2>
+      <p class="trail-info">{{model.city}}, {{model.state}}</p>
+      {{#if isDesc}}
+      <h3> Description <span> <button {{action 'closeDesc'}}>X</button></span></h3>
+      <p class="trail-info">{{model.description}}</p>
+      {{else}}
+      <button {{action 'expandDesc'}}>Description</button>
+      {{/if}}
+      {{#if isDirections}}
+      <h3>Directions <span> <button {{action 'closeDirections'}} class="btn-directions">X</button></span></h3>
+      <p class="trail-info">{{model.directions}}</p>
+      {{else}}
+      <button {{action 'expandDirections'}} class="btn-directions">Directions</button>
+      {{/if}}
     </div>
+    <div class="col-md-3">
+      <h2> Trail Information </h2>
+    </div>
+  </div>
 
+  <div class="container">
+    <div class="row">
 
+      <div class="col-md-6">
+        <div id="trail-map" class="map">
+          {{trail-map trail=model}}
+        </div>
+      </div>
     <div class="col-md-5 category-icons well">
       <button class="icon" {{action 'filter' '.activities' }}><img src="assets/images/run-icon.png"></button>
       <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/duck-icon.png"></button>
@@ -76,5 +79,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>
