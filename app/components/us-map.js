@@ -175,4 +175,11 @@ export default Ember.Component.extend({
 
     legend.addTo(map);
   }
+
+  // addStateTrails: function () {
+  //   let selectedState = this.get('selectedState');
+  //   $.getJSON(`/api/v1/trails/search?state=${selectedState}`).then((data) => {
+  //
+  //   });
+  // }.observes('selectedState')
 });

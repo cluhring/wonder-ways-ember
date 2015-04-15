@@ -3,10 +3,10 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
   searchTerm: '',
+  selectedState: '',
 
   filteredTrails: function () {
     let searchTerm = this.get('searchTerm');
-
     let trails = this.get('model');
 
     if (searchTerm) {
@@ -23,6 +23,13 @@ export default Ember.Controller.extend({
     return trails;
   }.property('searchTerm', 'model'),
 
-  selectedState: '',
+  stateTrails: function () {
+    let selectedState = this.get('selectedState');
+    let trails = this.get('model');
+
+    return trails.filter((obj) => {
+      return obj.state === selectedState;
+    });
+  }.property('selectedState'),
 
 });
