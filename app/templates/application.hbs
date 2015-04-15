@@ -1,5 +1,29 @@
-<img src="http://s24.postimg.org/u2976j7ol/transparent_wonder_ways_logo.png" id="logo"/>
-
 <div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <img src="http://s24.postimg.org/u2976j7ol/transparent_wonder_ways_logo.png" id="logo"/>
+    </div>
+    <div class="col-md-4">
+      <ul class="top-buttons">
+        <li><a href="#search" class="search-btn"><img src="assets/images/blue-search.png"></a></li>
+      </ul>
+    </div>
+  </div>
   {{outlet}}
 </div>
+
+<script>
+$(function () {
+    $('a[href="#search"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
+
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
+});
+</script>

@@ -8,7 +8,6 @@ export default DS.Model.extend({
   country: DS.attr('string'),
   lat: DS.attr('decimal'),
   lng: DS.attr('decimal'),
-  directions: DS.attr('text'),
-  description: DS.attr('text')
-
+  directions: DS.attr('string'),
+  description: DS.attr('text'),
 });

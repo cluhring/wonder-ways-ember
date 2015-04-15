@@ -1,4 +1,10 @@
-{{input value=searchTerm placeholder="Search Trails"}}
+<h2>Trails</h2>
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+      {{input value=searchTerm placeholder="Search Trails" autocomplete="off"}}
+    </form>
+</div>
 
 <ul>
   {{#each filteredTrails as |trail|}}
