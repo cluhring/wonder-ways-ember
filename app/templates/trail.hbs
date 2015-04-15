@@ -12,17 +12,20 @@
       <h2>{{model.name}}</h2>
       <p class="trail-info">{{model.city}}, {{model.state}}</p>
       {{#if isDesc}}
-      <h3> Description <span> <button {{action 'closeDesc'}}>X</button></span></h3>
-      <p class="trail-info">{{model.description}}</p>
-      {{else}}
-      <button {{action 'expandDesc'}}>Description</button>
+        <h3> Description <span> <button {{action 'closeDesc'}} class="btn-directions">X</button></span></h3>
+        <p class="trail-info">{{model.description}}</p>
       {{/if}}
       {{#if isDirections}}
-      <h3>Directions <span> <button {{action 'closeDirections'}} class="btn-directions">X</button></span></h3>
-      <p class="trail-info">{{model.directions}}</p>
-      {{else}}
-      <button {{action 'expandDirections'}} class="btn-directions">Directions</button>
+        <h3>Directions <span> <button {{action 'closeDirections'}} class="btn-directions">X</button></span></h3>
+        <p class="trail-info">{{model.directions}}</p>
       {{/if}}
+
+      {{#unless isDirections}}
+        <button {{action 'expandDirections'}} class="btn-directions">Directions</button>
+      {{/unless}}
+      {{#unless isDesc}}
+        <button {{action 'expandDesc'}} class="btn-directions">Description</button>
+      {{/unless}}
     </div>
     <div class="col-md-3">
       <h2> Trail Information </h2>
@@ -37,11 +40,12 @@
           {{trail-map trail=model}}
         </div>
       </div>
-    <div class="col-md-5 category-icons well">
-      <button class="icon" {{action 'filter' '.activities' }}><img src="assets/images/run-icon.png"></button>
-      <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/duck-icon.png"></button>
-      <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
-      <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
+      <div class="col-md-5 category-icons well">
+        <button class="icon" {{action 'filter' '.activities' }}><img src="assets/images/run-icon.png"></button>
+        <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/duck-icon.png"></button>
+        <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
+        <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
+      </div>
       <div class="all">
         <ul class="activities categoryType" hidden=true>
           <h3 class="sidebar-title">Activities and Info</h3>

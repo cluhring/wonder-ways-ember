@@ -187,7 +187,8 @@ img.back-button {
 
 .btn-directions {
   color: black;
-  font-size: 16px;
-  border-radius: 5px;
-  margin-bottom: 5px;
+  font-size: 18px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  background-color: #16cce9;
 }
