@@ -1,4 +1,10 @@
 <div class="row">
+  <div class="col-md-6">
+    <img src="http://s24.postimg.org/u2976j7ol/transparent_wonder_ways_logo.png" id="logo"/>
+  </div>
+</div>
+<div class="container well big-well">
+<div class="row">
   <div class="col-md-6 trail-header">
     <h2>{{model.name}}</h2>
     <p class="trail-info">{{model.city}}, {{model.state}}</p>
@@ -20,7 +26,7 @@
     </div>
 
 
-    <div class="col-md-6 category-icons well">
+    <div class="col-md-5 category-icons well">
       <button class="icon" {{action 'filter' '.activities' }}><img src="assets/images/run-icon.png"></button>
       <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/duck-icon.png"></button>
       <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
@@ -54,4 +60,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

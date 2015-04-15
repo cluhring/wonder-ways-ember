@@ -15,7 +15,8 @@ button.icon {
 }
 
 #logo {
-  padding: 40px;
+  margin-top: 70px;
+  margin-bottom: 90px;
 }
 
 a {
@@ -150,8 +151,8 @@ a.search-btn:hover {
 
 .icon {
   margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   margin-bottom:20px;
 }
 
@@ -160,4 +161,8 @@ button:hover {
   height: 100px;
   width: 100px;
   border-radius: 50px;
+}
+
+.big-well {
+  width: 100%;
 }
