@@ -2,6 +2,8 @@
   <div class="col-md-6 trail-header">
     <h2>{{model.name}}</h2>
     <p class="trail-info">{{model.city}}, {{model.state}}</p>
+    <p class="trail-info">{{model.directions}}</p>
+    <p class="trail-info">{{model.description}}</p>
   </div>
   <div class="col-md-3">
       <h2> Trail Information </h2>
@@ -25,7 +27,8 @@
       <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
       <div class="all">
         <ul class="activities categoryType" hidden=true>
-          <li>{{firstActivity.length}}</li>
+          <li>Trail Length: {{trailActivities.firstObject.length}}</li>
+          <li>{{trailActivities.firstObject.activity_description}}</li>
           {{#each activity in model.activities}}
           <li><a href="{{activity.url}}" class="info-text">{{activity.activity_type_name}}</a></li>
           {{/each}}
