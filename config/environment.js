@@ -25,7 +25,8 @@ module.exports = function(environment) {
        'script-src': "'self' *",
        'font-src': "'self' *",
        'img-src': "'self' *",
-       'style-src': "'self' *"
+       'style-src': "'self' *",
+       'media-src': "'self' *"
      }
   };
 

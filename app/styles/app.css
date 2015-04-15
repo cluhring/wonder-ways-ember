@@ -166,3 +166,20 @@ button:hover {
 .big-well {
   width: 100%;
 }
+
+.animal-info {
+  font-size: 16px;
+  color: white;
+}
+
+.all {
+  color: white;
+}
+
+.trail-top {
+  color:white;
+}
+
+.img-circle {
+  margin: 4px;
+}

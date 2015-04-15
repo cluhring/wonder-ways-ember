@@ -4,10 +4,15 @@ export default Ember.Controller.extend({
 
   trailActivities: Ember.computed.alias('model.activities'),
 
+  selectedBird: null,
+
   actions: {
     filter: function(category) {
       Ember.$('.categoryType').hide();
       Ember.$(category).show();
+    },
+    selectBird: function (bird) {
+      this.set('selectedBird', bird);
     }
   },
 
@@ -15,7 +20,7 @@ export default Ember.Controller.extend({
     let allSpecies = this.get('model').species;
 
     function filterByHasClip(obj) {
-       return (obj.clip_url !== "not available");
+       return (obj.clip_url !== "not available" && obj.clip_url !== "not found");
     }
 
     var birds = allSpecies.filter(filterByHasClip);
