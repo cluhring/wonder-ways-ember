@@ -5,5 +5,12 @@
   {{us-map trails=model selectedState=selectedState}}
 </div>
 
+<h1>HI THERE</h1>
+<ul class="state_trails">
+  {{selectedState}}
+  {{#each stateTrails as |trail|}}
+  <li>{{trail.name}}</li>
+  {{/each}}
+</ul>
 
 {{outlet}}
