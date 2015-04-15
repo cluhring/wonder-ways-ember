@@ -4,18 +4,38 @@ export default Ember.Controller.extend({
 
   trailActivities: Ember.computed.alias('model.activities'),
 
+  isDesc: false,
+  isDirections: false,
+
+
   actions: {
+    expandDirections: function() {
+      this.set('isDirections', true);
+    },
+
+    closeDirections: function() {
+      this.set('isDirections', false);
+    },
+
+    expandDesc: function() {
+      this.set('isDesc', true);
+    },
+
+    closeDesc: function() {
+      this.set('isDesc', false);
+    },
+
     filter: function(category) {
       Ember.$('.categoryType').hide();
       Ember.$(category).show();
-    }
+    },
   },
 
   birds: function () {
     let allSpecies = this.get('model').species;
 
     function filterByHasClip(obj) {
-       return (obj.clip_url !== "not available");
+       return (obj.clip_url !== "not available" && obj.clip_url !== "not found");
     }
 
     var birds = allSpecies.filter(filterByHasClip);

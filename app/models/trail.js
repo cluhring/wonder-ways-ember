@@ -10,4 +10,5 @@ export default DS.Model.extend({
   lng: DS.attr('decimal'),
   directions: DS.attr('string'),
   description: DS.attr('text'),
+  length: DS.attr('string'),
 });
