@@ -31,6 +31,12 @@ a:hover {
 
 li {
   list-style: none;
+
+}
+
+.info-text {
+  list-style: none;
+  font-size: 20px;
 }
 
 .trail-map {
@@ -143,6 +149,15 @@ a.search-btn:hover {
 }
 
 .icon {
+  margin-top: 10px;
   margin-left: 20px;
   margin-right: 10px;
+  margin-bottom:20px;
+}
+
+button:hover {
+  background: rgba(91, 204, 208, 0.57);
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
 }
