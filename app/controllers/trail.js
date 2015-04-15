@@ -11,9 +11,9 @@ export default Ember.Controller.extend({
       this.set('isExpanded', true);
     },
 
-    // directions: function() {
-    //   this.set('isExpanded', false);
-    // },
+    close: function() {
+      this.set('isExpanded', false);
+    },
 
     filter: function(category) {
       Ember.$('.categoryType').hide();
