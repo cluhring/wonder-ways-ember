@@ -156,7 +156,7 @@ a.search-btn:hover {
   margin-bottom:20px;
 }
 
-button:hover {
+button.icon:hover {
   background: rgba(91, 204, 208, 0.57);
   height: 100px;
   width: 100px;
@@ -165,4 +165,9 @@ button:hover {
 
 .big-well {
   width: 100%;
+}
+
+img.back-button {
+  margin-top: 100px;
+  margin-right: 100px;
 }
