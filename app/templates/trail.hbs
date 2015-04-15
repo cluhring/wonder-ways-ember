@@ -7,66 +7,71 @@
   </div>
 </div>
 <div class="container well big-well">
-<div class="row">
-  <div class="col-md-6 trail-header">
-    <h2>{{model.name}}</h2>
-    <p class="trail-info">{{model.city}}, {{model.state}}</p>
-    <p class="trail-info">{{model.description}}</p>
-    {{#if isExpanded}}
-    <h3>Directions<span> <button {{action 'close'}}>X</button></span></h3>
-    <p class="trail-info">{{model.directions}}</p>
-    {{else}}
-    <button {{action 'expand'}}>Directions</button>
-    {{/if}}
-  </div>
-  <div class="col-md-3">
-      <h2> Trail Information </h2>
-  </div>
-</div>
-
-<div class="container">
   <div class="row">
-
-    <div class="col-md-6">
-      <div id="trail-map" class="map">
-        {{trail-map trail=model}}
-      </div>
+    <div class="col-md-6 trail-header">
+      <h2>{{model.name}}</h2>
+      <p class="trail-info">{{model.city}}, {{model.state}}</p>
+      {{#if isDesc}}
+      <h3> Description <span> <button {{action 'closeDesc'}}>X</button></span></h3>
+      <p class="trail-info">{{model.description}}</p>
+      {{else}}
+      <button {{action 'expandDesc'}}>Description</button>
+      {{/if}}
+      {{#if isDirections}}
+      <h3>Directions <span> <button {{action 'closeDirections'}}>X</button></span></h3>
+      <p class="trail-info">{{model.directions}}</p>
+      {{else}}
+      <button {{action 'expandDirections'}}>Directions</button>
+      {{/if}}
     </div>
+    <div class="col-md-3">
+      <h2> Trail Information </h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6">
+        <div id="trail-map" class="map">
+          {{trail-map trail=model}}
+        </div>
+      </div>
 
 
-    <div class="col-md-5 category-icons well">
-      <button class="icon" {{action 'filter' '.activities' }}><img src="assets/images/run-icon.png"></button>
-      <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/duck-icon.png"></button>
-      <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
-      <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
-      <div class="all">
-        <ul class="activities categoryType" hidden=true>
-          <li>Trail Length: {{model.length}}</li>
-          <li>{{trailActivities.firstObject.activity_description}}</li>
-          {{#each activity in model.activities}}
-          <li><a href="{{activity.url}}" class="info-text">{{activity.activity_type_name}}</a></li>
-          {{/each}}
-        </ul>
+      <div class="col-md-5 category-icons well">
+        <button class="icon" {{action 'filter' '.activities' }}><img src="assets/images/run-icon.png"></button>
+        <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/duck-icon.png"></button>
+        <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
+        <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
+        <div class="all">
+          <ul class="activities categoryType" hidden=true>
+            <li>Trail Length: {{model.length}}</li>
+            <li>{{trailActivities.firstObject.activity_description}}</li>
+            {{#each activity in model.activities}}
+            <li><a href="{{activity.url}}" class="info-text">{{activity.activity_type_name}}</a></li>
+            {{/each}}
+          </ul>
 
-        <ul class="animals categoryType" hidden=true>
-          {{#each animals as |animal|}}
-          <li><a href="{{animal.photo_url}}" class="info-text"><img src="{{animal.photo_url}}" class="img-rounded" alt="Cinque Terre" width="152" height="118"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
-          {{/each}}
-        </ul>
+          <ul class="animals categoryType" hidden=true>
+            {{#each animals as |animal|}}
+            <li><a href="{{animal.photo_url}}" class="info-text"><img src="{{animal.photo_url}}" class="img-rounded" alt="Cinque Terre" width="152" height="118"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
+            {{/each}}
+          </ul>
 
-        <ul class="plants categoryType" hidden=true>
-          {{#each plants as |plant| }}
-          <li><a href="{{plant.photo_url}}" class="info-text"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
-          {{/each}}
-        </ul>
+          <ul class="plants categoryType" hidden=true>
+            {{#each plants as |plant| }}
+            <li><a href="{{plant.photo_url}}" class="info-text"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
+            {{/each}}
+          </ul>
 
-        <ul class="birds categoryType" hidden=true>
-          {{#each birds as |bird|}}
+          <ul class="birds categoryType" hidden=true>
+            {{#each birds as |bird|}}
             <li><a href="{{bird.clip_url}}" class="info-text">Bird Sound</a></li>
-          {{/each}}
-        </ul>
+            {{/each}}
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
