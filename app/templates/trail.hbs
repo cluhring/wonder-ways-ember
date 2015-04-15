@@ -7,16 +7,16 @@
   </div>
 </div>
 <div class="container well big-well">
-<div class="row">
+<div class="row trail-top">
   <div class="col-md-6 trail-header">
     <h2>{{model.name}}</h2>
     <p class="trail-info">{{model.city}}, {{model.state}}</p>
     <p class="trail-info">{{model.description}}</p>
     {{#if isExpanded}}
-    <h3>Directions<span> <button {{action 'close'}}>X</button></span></h3>
+    <h3>Directions<span> <button  {{action 'close'}} class="btn-directions">X</button></span></h3>
     <p class="trail-info">{{model.directions}}</p>
     {{else}}
-    <button {{action 'expand'}}>Directions</button>
+    <button {{action 'expand'}} class="btn-directions" >Directions</button>
     {{/if}}
   </div>
   <div class="col-md-3">
@@ -41,6 +41,7 @@
       <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
       <div class="all">
         <ul class="activities categoryType" hidden=true>
+          <h3 class="sidebar-title">Activities and Info</h3>
           <li>Trail Length: {{model.length}}</li>
           <li>{{trailActivities.firstObject.activity_description}}</li>
           {{#each activity in model.activities}}
@@ -49,20 +50,27 @@
         </ul>
 
         <ul class="animals categoryType" hidden=true>
+          <h3 class="sidebar-title">Animals</h3>
           {{#each animals as |animal|}}
-          <li><a href="{{animal.photo_url}}" class="info-text"><img src="{{animal.photo_url}}" class="img-rounded" alt="Cinque Terre" width="152" height="118"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
+          <li class="animal-info"><a href="{{animal.photo_url}}" class="info-text"> <img src="{{animal.photo_url}}" class="img-rounded" alt="Photo of {{animal.scientific_name}}" width="152" height="118"></a> {{animal.scientific_name}} {{animal.common_name}}</li>
           {{/each}}
         </ul>
 
         <ul class="plants categoryType" hidden=true>
-          {{#each plants as |plant| }}
-          <li><a href="{{plant.photo_url}}" class="info-text"><img src="{{plant.photo_url}}" height="80px"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
+          <h3 class="sidebar-title">Plants</h3>
+          {{#each plants as |plant|}}
+          <li class="animal-info"><a href="{{plant.photo_url}}" class="info-text"><img src="{{plant.photo_url}}" class="img-rounded" alt="Photo of {{plant.scientific_name}}" width="152" height="118"></a> {{plant.scientific_name}} {{plant.common_name}}</li>
           {{/each}}
         </ul>
 
         <ul class="birds categoryType" hidden=true>
+          <h3 class="sidebar-title">Birds</h3>
           {{#each birds as |bird|}}
-            <li><a href="{{bird.clip_url}}" class="info-text">Bird Sound</a></li>
+            <li class="animal-info">
+              <a href="{{bird.photo_url}}" class="info-text">
+                <img src="{{bird.photo_url}}" class="img-circle" alt="Image of {{bird.scientific_name}}" height="76" width="76"></a>
+                {{bird.scientific_name}} {{bird.common_name}} <a href="{{bird.clip_url}}">
+              <img src="assets/images/music_wh.png" height="20px"></a></li>
           {{/each}}
         </ul>
       </div>

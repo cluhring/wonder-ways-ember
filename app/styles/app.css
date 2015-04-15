@@ -167,7 +167,27 @@ button.icon:hover {
   width: 100%;
 }
 
+.animal-info {
+  font-size: 16px;
+  color: white;
+}
+
+.all, .trail-top {
+  color: white;
+}
+
+.img-circle {
+  margin: 4px;
+}
+
 img.back-button {
   margin-top: 100px;
   margin-right: 100px;
+}
+
+.btn-directions {
+  color: black;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
