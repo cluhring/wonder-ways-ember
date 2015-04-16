@@ -9,7 +9,7 @@
 <div id="search">
     <button type="button" class="close">×</button>
     <form>
-      {{input type="search" value=searchTerm placeholder="Search Trails" autocomplete="off"}}
+      {{input type="search" value=searchTerm placeholder="Enter Keyword(s)" autocomplete="off"}}
     </form>
 </div>
 <div class="row well">
@@ -41,18 +41,6 @@
 </div>
 
 <script>
-// var pages = pagination({ total: 1000, rows: 10, visible: 20, page: 15 });
-
-$(function() {
-    $('.state-results').pagination({
-        items: 100,
-        itemsOnPage: 10,
-        cssStyle: 'light-theme'
-    });
-});
-
-console.log("finding lookup", $("a[href='#lookUp']"));
-
 $(function () {
   console.log("finding lookup", $("a[href='#lookUp']"));
 
