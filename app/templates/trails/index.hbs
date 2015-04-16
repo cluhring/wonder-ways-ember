@@ -14,6 +14,14 @@
       {{input value=searchTerm placeholder="Search Trails" autocomplete="off"}}
     </form>
 </div>
+<div class="row well">
+  <h1>See Trails in Your State</h1>
+  <div class="state-links">
+    {{#each allStates as |state| }}
+    {{#link-to 'trails' state}}{{state}}{{/link-to}}
+    {{/each}}
+  </div>
+</div>
 
 <h2>Trails</h2>
 

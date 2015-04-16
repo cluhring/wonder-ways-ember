@@ -3,6 +3,15 @@
     <img src="http://s24.postimg.org/u2976j7ol/transparent_wonder_ways_logo.png" id="logo"/>
   </div>
 </div>
+
+<div class="row well">
+  <h1>See Trails in Your State</h1>
+  <div class="state-links">
+    {{#each allStates as |state| }}
+    {{#link-to 'trails' state}}{{state}}{{/link-to}}
+    {{/each}}
+  </div>
+</div>
 <div id="us-map" class="map">
   <h3>State: <span>{{#link-to 'trails' selectedState}}{{selectedState}}{{/link-to}}</span></h3>
   {{us-map trails=model selectedState=selectedState}}
