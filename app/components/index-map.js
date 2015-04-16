@@ -31,12 +31,13 @@ export default Ember.Component.extend({
       return output
     };
 
-    map.setView([trails[0].lat, trails[0].lng], 6);
+    map.setView([trails[5].lat, trails[5].lng], 6);
 
     var pointSet = { "type": "FeatureCollection",
       "features": points()
     };
 
-var myLayer = L.mapbox.featureLayer(pointSet).addTo(map);
+  var myLayer = L.mapbox.featureLayer(pointSet).bindPopup('Hi, Steve').addTo(map);
+
 }
 });
