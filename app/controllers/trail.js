@@ -7,7 +7,6 @@ export default Ember.Controller.extend({
   isDesc: false,
   isDirections: false,
 
-
   actions: {
     expandDirections: function() {
       this.set('isDirections', true);
