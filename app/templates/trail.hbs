@@ -12,19 +12,19 @@
       <h2>{{model.name}}</h2>
       <p class="trail-info">{{model.city}}, {{model.state}}</p>
       {{#if isDesc}}
-        <h3> Description <span> <button {{action 'closeDesc'}} class="btn-directions">X</button></span></h3>
-        <p class="trail-info">{{model.description}}</p>
+      <h3> Description <span> <button {{action 'closeDesc'}} class="btn-directions">X</button></span></h3>
+      <p class="trail-info">{{model.description}}</p>
       {{/if}}
       {{#if isDirections}}
-        <h3>Directions <span> <button {{action 'closeDirections'}} class="btn-directions">X</button></span></h3>
-        <p class="trail-info">{{model.directions}}</p>
+      <h3>Directions <span> <button {{action 'closeDirections'}} class="btn-directions">X</button></span></h3>
+      <p class="trail-info">{{model.directions}}</p>
       {{/if}}
 
       {{#unless isDirections}}
-        <button {{action 'expandDirections'}} class="btn-directions">Directions</button>
+      <button {{action 'expandDirections'}} class="btn-directions">Directions</button>
       {{/unless}}
       {{#unless isDesc}}
-        <button {{action 'expandDesc'}} class="btn-directions">Description</button>
+      <button {{action 'expandDesc'}} class="btn-directions">Description</button>
       {{/unless}}
     </div>
     <div class="col-md-3">
@@ -45,7 +45,6 @@
         <button class="icon" {{action 'filter' '.birds' }}><img src="assets/images/duck-icon.png"></button>
         <button class="icon" {{action 'filter' '.animals' }}><img src="assets/images/animal.png"></button>
         <button class="icon" {{action 'filter' '.plants' }}><img src="assets/images/plants-icon.png"></button>
-      </div>
       <div class="all">
         <ul class="activities categoryType" hidden=true>
           <h3 class="sidebar-title">Activities and Info</h3>
@@ -73,15 +72,15 @@
         <ul class="birds categoryType" hidden=true>
           <h3 class="sidebar-title">Birds</h3>
           {{#each birds as |bird|}}
-            <li class="animal-info">
-              <a href="{{bird.photo_url}}" class="info-text">
-                <img src="{{bird.photo_url}}" class="img-circle" alt="Image of {{bird.scientific_name}}" height="76" width="76"></a>
-                {{bird.scientific_name}} {{bird.common_name}} <a href="{{bird.clip_url}}">
-              <img src="assets/images/music_wh.png" height="20px"></a></li>
-          {{/each}}
-        </ul>
+          <li class="animal-info">
+            <a href="{{bird.photo_url}}" class="info-text">
+              <img src="{{bird.photo_url}}" class="img-circle" alt="Image of {{bird.scientific_name}}" height="76" width="76"></a>
+              {{bird.scientific_name}} {{bird.common_name}} <a href="{{bird.clip_url}}">
+                <img src="assets/images/music_wh.png" height="20px"></a></li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</div>
