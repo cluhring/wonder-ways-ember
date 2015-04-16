@@ -8,7 +8,6 @@
     </ul>
   </div>
 </div>
-<h2>Trails</h2>
 <div id="search">
     <button type="button" class="close">×</button>
     <form>
@@ -16,8 +15,11 @@
     </form>
 </div>
 
+<h2>Trails</h2>
+
 <ul>
   {{#each filteredTrails as |trail|}}
   <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
+  <li>{{trail.city}}, {{trail.state}}</li>
   {{/each}}
 </ul>
