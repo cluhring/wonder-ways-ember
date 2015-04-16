@@ -41,8 +41,15 @@
 </div>
 
 <script>
+console.log("finding lookup", $("a[href='#lookUp']"));
+
 $(function () {
+  console.log("finding lookup", $("a[href='#lookUp']"));
+
   $(document).ready(function () {
+    console.log("finding lookup", $("a[href='#lookUp']"));
+
+
     $('a[href="#lookUp"]').on('click', function(event) {
         event.preventDefault();
         $('#search').addClass('open');
