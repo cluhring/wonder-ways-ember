@@ -7,22 +7,63 @@
   </div>
   <div class="col-md-4">
     <ul class="top-buttons">
-      <li><a href="#search" class="search-btn"><img src="assets/images/blue-search.png"></a></li>
+      <li><a href="#lookUp"><img src="assets/images/blue-search.png" class="search-btn"></a></li>
     </ul>
   </div>
 </div>
 <div id="search">
     <button type="button" class="close">×</button>
     <form>
-      {{input value=searchTerm placeholder="Search Trails" autocomplete="off"}}
+      {{input type="search" value=searchTerm placeholder="Search Trails" autocomplete="off"}}
     </form>
 </div>
+<div class="row well">
+  <h1>See Trails in Your State</h1>
+  <div class="state-links">
+    {{#each allStates as |state| }}
+    {{#link-to 'trails' state}}{{state}}{{/link-to}}
+    {{/each}}
+  </div>
+</div>
 
-<h2>Trails</h2>
-
+<div class="row well">
+  <h2>Trails</h2>
+  <div class="col-md-6">
 <ul>
   {{#each filteredTrails as |trail|}}
     <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
     <li>{{trail.city}}, {{trail.state}}</li>
   {{/each}}
 </ul>
+</div>
+<div class="col-md-6">
+    <div id="index-map" class="map">
+        {{index-map trails=model}}
+    </div>
+</div>
+</div>
+
+<script>
+console.log("finding lookup", $("a[href='#lookUp']"));
+
+$(function () {
+  console.log("finding lookup", $("a[href='#lookUp']"));
+
+  $(document).ready(function () {
+    console.log("finding lookup", $("a[href='#lookUp']"));
+
+
+    $('a[href="#lookUp"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
+
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
+  });
+});
+</script>
