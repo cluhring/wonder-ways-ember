@@ -4,15 +4,19 @@
   </div>
 </div>
 
-<div class="row well">
+<div class="row">
+  <div class="col-md-9">
+  <div id="us-map" class="map">
+    <h3>State: <span>{{#link-to 'trails' selectedState}}{{selectedState}}{{/link-to}}</span></h3>
+    {{us-map trails=model selectedState=selectedState}}
+  </div>
+  </div>
+  <div class="col-md-3 well">
   <h1>See Trails in Your State</h1>
   <div class="state-links">
     {{#each allStates as |state| }}
     {{#link-to 'trails' state}}{{state}}{{/link-to}}
     {{/each}}
   </div>
-</div>
-<div id="us-map" class="map">
-  <h3>State: <span>{{#link-to 'trails' selectedState}}{{selectedState}}{{/link-to}}</span></h3>
-  {{us-map trails=model selectedState=selectedState}}
+  </div>
 </div>

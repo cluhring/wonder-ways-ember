@@ -224,3 +224,7 @@ img.back-button {
   margin-bottom: 6px;
   background-color: #16cce9;
 }
+
+a.ember-view {
+  margin: 10px;
+}
