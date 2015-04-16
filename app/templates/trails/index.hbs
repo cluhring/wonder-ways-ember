@@ -5,47 +5,42 @@
   <div class="col-md-8">
     <img src="http://s24.postimg.org/u2976j7ol/transparent_wonder_ways_logo.png" id="logo"/>
   </div>
-  <div class="col-md-4">
-    <ul class="top-buttons">
-      <li><a href="#lookUp"><img src="assets/images/blue-search.png" class="search-btn"></a></li>
-    </ul>
-  </div>
 </div>
 <div id="search">
     <button type="button" class="close">×</button>
     <form>
-      {{input type="search" value=searchTerm placeholder="Search Trails" autocomplete="off"}}
+      {{input type="search" value=searchTerm placeholder="Enter Keyword(s)" autocomplete="off"}}
     </form>
 </div>
 <div class="row well">
-  <h1>See Trails in Your State</h1>
+  <div class="states-index">
+  <h1>Trails by State</h1>
   <div class="state-links">
     {{#each allStates as |state| }}
     {{#link-to 'trails' state}}{{state}}{{/link-to}}
     {{/each}}
   </div>
 </div>
+</div>
 
 <div class="row well">
-  <h2>Trails</h2>
+  <h2 class="state-title">Trails<span class="top-buttons"><a href="#lookUp"><img src="assets/images/filter.png" class="search-btn"></a></span></h2>
   <div class="col-md-6">
-<ul>
-  {{#each filteredTrails as |trail|}}
-    <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
-    <li>{{trail.city}}, {{trail.state}}</li>
-  {{/each}}
-</ul>
-</div>
+    <ul class="state-results">
+      {{#each filteredTrails as |trail|}}
+      <li class="state-results">{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
+      <li class="state-results">{{trail.city}}, {{trail.state}}</li>
+      {{/each}}
+    </ul>
+  </div>
 <div class="col-md-6">
-    <div id="index-map" class="map">
-        {{index-map trails=model}}
+  <div id="index-map" class="map">
+      {{index-map trails=model}}
     </div>
-</div>
+  </div>
 </div>
 
 <script>
-console.log("finding lookup", $("a[href='#lookUp']"));
-
 $(function () {
   console.log("finding lookup", $("a[href='#lookUp']"));
 
