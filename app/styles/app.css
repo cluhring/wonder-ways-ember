@@ -1,5 +1,6 @@
 body {
   font-family: 'Lato', sans-serif;
+  color: white;
   background-image: url('images/mountain.jpg');
   no-repeat center center;
   background-size: cover;
@@ -21,7 +22,7 @@ button.icon {
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: 500;
 }
 
@@ -45,9 +46,15 @@ li {
   height: 500px;
 }
 
+.index-map {
+  width: 500px;
+  height: 500px;
+}
+
 .us-map {
   width: 700px;
   height: 500px;
+  margin-bottom: 50px;
 }
 
 .info {
@@ -71,7 +78,7 @@ li {
   width: 18px;
   height: 18px;
   float: left;
-  margin-right: 8px;
+  margin-right: 6px;
   opacity: 0.7;
 }
 
@@ -108,6 +115,23 @@ li {
 }
 
 input#ember386 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0);
+  font-size: 120px;
+  font-weight: 300;
+  text-align: center;
+  border: 0px;
+  margin: 0px auto;
+  margin-top: -51px;
+  padding-left: 30px;
+  padding-right: 30px;
+  outline: none;
+}
+
+input#ember1756 {
   position: absolute;
   top: 50%;
   width: 100%;
@@ -179,6 +203,7 @@ a.search-btn:hover {
 
 .well {
   background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
 }
 
 .icon {
@@ -223,4 +248,36 @@ img.back-button {
   border-radius: 6px;
   margin-bottom: 6px;
   background-color: #16cce9;
+}
+
+a.ember-view {
+  display: inline-block;
+  width: 165px;
+  font-size: 20px;
+}
+
+.featured-trails {
+  height: 350px;
+}
+
+img.img-thumbnail {
+  margin-bottom: 0;
+}
+
+.pic-info {
+  margin-left: 8px;
+  color: white;
+}
+
+.state {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.leaflet-control {
+  font-size: 16px;
+}
+
+.map-title {
+  margin-left: 200px;
 }
