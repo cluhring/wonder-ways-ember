@@ -233,11 +233,12 @@ img.back-button {
   background-color: #16cce9;
 }
 
-a.ember-view {
+div.state-links a.ember-view {
   display: inline-block;
   width: 165px;
   font-size: 20px;
 }
+
 
 .featured-trails {
   height: 350px;
@@ -276,4 +277,9 @@ img.img-thumbnail {
 a.ember-view {
   display: inline-block;
   width: 400px;
+  font-size: 16px;
+}
+
+li.state-results {
+  margin: 5px;
 }
