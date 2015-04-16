@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
   searchTerm: '',
+  selectedState: '',
 
   filteredTrails: function () {
     let searchTerm = this.get('searchTerm').toLowerCase();
@@ -18,7 +19,6 @@ export default Ember.Controller.extend({
         return isMatching;
       });
     }
-
     return trails;
   }.property('searchTerm', 'model')
 });
