@@ -1,4 +1,7 @@
 <div class="row">
+  <div class="col-md-1">
+    <a href="/"><img src="assets/images/back-button.png" class="back-button"></a>
+  </div>
   <div class="col-md-8">
     <img src="http://s24.postimg.org/u2976j7ol/transparent_wonder_ways_logo.png" id="logo"/>
   </div>
@@ -8,7 +11,6 @@
     </ul>
   </div>
 </div>
-<h2>Trails</h2>
 <div id="search">
     <button type="button" class="close">×</button>
     <form>
@@ -16,8 +18,11 @@
     </form>
 </div>
 
+<h2>Trails</h2>
+
 <ul>
   {{#each filteredTrails as |trail|}}
-  <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
+    <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
+    <li>{{trail.city}}, {{trail.state}}</li>
   {{/each}}
 </ul>
