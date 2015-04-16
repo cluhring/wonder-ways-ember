@@ -28,8 +28,8 @@
   <div class="col-md-6">
     <ul class="state-results">
       {{#each filteredTrails as |trail|}}
-      <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
-      <li>{{trail.city}}, {{trail.state}}</li>
+      <li class="state-results">{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
+      <li class="state-results">{{trail.city}}, {{trail.state}}</li>
       {{/each}}
     </ul>
   </div>

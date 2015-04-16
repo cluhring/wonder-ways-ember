@@ -273,6 +273,7 @@ img.img-thumbnail {
   margin-left: 50px;
 }
 
-.state-results {
-  width:
+a.ember-view {
+  display: inline-block;
+  width: 400px;
 }
