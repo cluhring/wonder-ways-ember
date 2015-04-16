@@ -80,9 +80,7 @@ export default Ember.Component.extend({
              d > 200  ? '#807dba' :
              d > 100  ? '#9e9ac8' :
              d > 50   ? '#bcbddc' :
-             d > 20   ? '#dadaeb' :
-             d > 10   ? '#efedf5' :
-                        '#fcfbfd';
+                        'black';
     }
 
     function style(feature) {
@@ -91,8 +89,8 @@ export default Ember.Component.extend({
         weight: 2,
         opacity: 1,
         color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
+        dashArray: '1',
+        fillOpacity: 0.8,
       };
     }
 
@@ -148,7 +146,7 @@ export default Ember.Component.extend({
 
   // method that we will use to update the control based on feature properties passed
     info.update = function (props) {
-      this._div.innerHTML = '<h4>US Trails</h4>' +  (props ?
+      this._div.innerHTML =  (props ?
           '<b>' + props.name + '</b><br />' + props.tot_trails + ' trails'
           : 'Hover over a state');
     };
@@ -160,14 +158,14 @@ export default Ember.Component.extend({
     legend.onAdd = function (map) {
 
       var div = L.DomUtil.create('div', 'info legend'),
-          grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+          grades = [ 50, 100, 200, 500, 1000],
           labels = [];
 
       // loop through our density intervals and generate a label with a colored square for each interval
       for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-          '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-          grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+          '<p><i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+          grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '</p>' : '+');
       }
 
       return div;

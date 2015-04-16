@@ -1,5 +1,6 @@
 body {
   font-family: 'Lato', sans-serif;
+  color: white;
   background-image: url('images/mountain.jpg');
   no-repeat center center;
   background-size: cover;
@@ -48,6 +49,7 @@ li {
 .us-map {
   width: 700px;
   height: 500px;
+  margin-bottom: 50px;
 }
 
 .info {
@@ -71,7 +73,7 @@ li {
   width: 18px;
   height: 18px;
   float: left;
-  margin-right: 8px;
+  margin-right: 6px;
   opacity: 0.7;
 }
 
@@ -223,4 +225,12 @@ img.back-button {
   border-radius: 6px;
   margin-bottom: 6px;
   background-color: #16cce9;
+}
+
+.leaflet-control {
+  font-size: 16px;
+}
+
+.map-title {
+  margin-left: 200px;
 }
