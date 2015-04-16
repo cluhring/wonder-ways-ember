@@ -2,9 +2,6 @@
 
 import Ember from 'ember';
 
-// var stateData = require('./state-info');
-// console.log(stateData);
-
 export default Ember.Component.extend({
 
   map: null,
@@ -175,11 +172,4 @@ export default Ember.Component.extend({
 
     legend.addTo(map);
   }
-
-  // addStateTrails: function () {
-  //   let selectedState = this.get('selectedState');
-  //   $.getJSON(`/api/v1/trails/search?state=${selectedState}`).then((data) => {
-  //
-  //   });
-  // }.observes('selectedState')
 });
