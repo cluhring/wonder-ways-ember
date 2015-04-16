@@ -26,21 +26,31 @@
 <div class="row well">
   <h2 class="state-title">Trails<span class="top-buttons"><a href="#lookUp"><img src="assets/images/filter.png" class="search-btn"></a></span></h2>
   <div class="col-md-6">
-<ul>
-  {{#each filteredTrails as |trail|}}
-    <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
-    <li>{{trail.city}}, {{trail.state}}</li>
-  {{/each}}
-</ul>
-</div>
+    <ul class="state-results">
+      {{#each filteredTrails as |trail|}}
+      <li>{{#link-to 'trail' trail}}{{trail.name}}{{/link-to}}</li>
+      <li>{{trail.city}}, {{trail.state}}</li>
+      {{/each}}
+    </ul>
+  </div>
 <div class="col-md-6">
-    <div id="index-map" class="map">
-        {{index-map trails=model}}
+  <div id="index-map" class="map">
+      {{index-map trails=model}}
     </div>
-</div>
+  </div>
 </div>
 
 <script>
+// var pages = pagination({ total: 1000, rows: 10, visible: 20, page: 15 });
+
+$(function() {
+    $('.state-results').pagination({
+        items: 100,
+        itemsOnPage: 10,
+        cssStyle: 'light-theme'
+    });
+});
+
 console.log("finding lookup", $("a[href='#lookUp']"));
 
 $(function () {
