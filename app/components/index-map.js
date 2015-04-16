@@ -31,7 +31,7 @@ export default Ember.Component.extend({
       return output
     };
 
-    map.setView([0, 0], 15);
+    map.setView([trails[0].lat, trails[0].lng], 6);
 
     var pointSet = { "type": "FeatureCollection",
       "features": points()
