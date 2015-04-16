@@ -4,14 +4,14 @@
   </div>
   <div class="col-md-4">
     <ul class="top-buttons">
-      <li><img src="assets/images/blue-search.png" class="search-btn"></li>
+      <li><a href="#lookUp"><img src="assets/images/blue-search.png" class="search-btn"></a></li>
     </ul>
   </div>
 </div>
 <div id="search">
     <button type="button" class="close">×</button>
     <form>
-      {{input value=searchTerm placeholder="Search Trails" autocomplete="off"}}
+      {{input type="search" value=searchTerm placeholder="Search Trails" autocomplete="off"}}
     </form>
 </div>
 <div class="row well">
@@ -31,3 +31,22 @@
   <li>{{trail.city}}, {{trail.state}}</li>
   {{/each}}
 </ul>
+
+
+<script>
+$(function () {
+  $(document).ready(function () {
+    $('a[href="#lookUp"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
+
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
+  });
+});
+</script>

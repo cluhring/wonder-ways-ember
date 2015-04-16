@@ -2,6 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  actions: {
+  indexFilter: function(type) {
+    Ember.$('.frontPage').hide();
+    Ember.$(type).show();
+  },
+},
+
   searchTerm: '',
   selectedState: '',
   allStates: ["Alabama",
@@ -54,4 +61,5 @@ export default Ember.Controller.extend({
   "West Virginia",
   "Wisconsin",
   "Wyoming"],
+
 });
