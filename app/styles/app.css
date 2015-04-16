@@ -244,3 +244,8 @@ img.img-thumbnail {
   margin-left: 8px;
   color: white;
 }
+
+.state {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
